@@ -16,3 +16,10 @@ router.route('/:thoughtID')
 .get(getSingleThought)
 .put(updateThought)
 .delete(deleteThought);
+
+router.route('/:thoughtID/reactions')
+.post(createReaction);
+
+router.route('/:thoughtID/reactions/:reactionID')
+.delete(deleteReaction);
+
