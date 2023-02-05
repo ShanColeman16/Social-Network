@@ -25,5 +25,16 @@ createUser(req,res) {
         return res.status(500).json(err);
     });
 },
-
+updateUser(req, res) {
+    User.findOneandUpdate(
+        { _id: req.parms.userId },
+        { $set: req.body },
+        { runValidators: true, new: true }
+    )
+    .then((user) =>
+        !user ? res.status(404).json({ message: "No user found with that Id"}) 
+        :res.json(user)
+     )  
+     .catch(( err) => res.status(500).json(err));
+}
 
