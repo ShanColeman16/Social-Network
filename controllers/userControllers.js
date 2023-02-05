@@ -36,5 +36,17 @@ updateUser(req, res) {
         :res.json(user)
      )  
      .catch(( err) => res.status(500).json(err));
+},
+addFriend(req, res) {
+    User.findOneandUpdate(
+        { _id: req.parmas.userId },
+        { $addToSet: { friends: req.parmas.friendId } },
+        { runValidators: true, new: true }
+    )
+    .then((user) =>
+        !user ? res.status(404).json({ message: "No user found with that Id"}) 
+        :res.json(user)
+     )  
+     .catch(( err) => res.status(500).json(err));
 }
 
