@@ -23,3 +23,4 @@ router.route('/:thoughtID/reactions')
 router.route('/:thoughtID/reactions/:reactionID')
 .delete(deleteReaction);
 
+module.exports = router;
