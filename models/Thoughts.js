@@ -56,3 +56,5 @@ const reactionSchema = new Schema (
     )
 
     const Thought = model('Thought', ThoughtSchema);
+
+    model.exports = Thought;
