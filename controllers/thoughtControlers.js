@@ -9,8 +9,7 @@ getAllThoughts(req,res){
 }, 
 getThoughtById(req,res) {
     Thought.findOne({_id: req.params.ThoughtId })
-    .populate("thoughts")
-    .populate("friends")
+      .select('-_v')
     .then((Thought) =>
         !Thought ? res.status(404).json({ message: "No Thought found with that Id"}) 
         :res.json(Thought)
