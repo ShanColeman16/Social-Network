@@ -4,8 +4,8 @@
     "description": "social network app",
     "main": "server.js",
     "scripts": {
-      "start": "node index",
-      "dev": "nodemon index",
+      "start": "node server",
+      "dev": "nodemon server",
       "seed": "node utils/seed"
     },
     "keywords": [],
