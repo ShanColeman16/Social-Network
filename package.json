@@ -1,11 +1,12 @@
 {
     "name": "Social-Network",
     "version": "1.0.0",
-    "description": "",
+    "description": "social network app",
     "main": "server.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+      "start": "node index",
+      "dev": "nodemon index",
+      "seed": "node utils/seed"
     },
     "keywords": [],
     "author": "",
