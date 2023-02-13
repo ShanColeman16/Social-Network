@@ -3,10 +3,10 @@ const { User } = require("../models");
 const userController = {
 getAllUsers(req,res){
     User.find({})
-    .then((user)) => res.json(user)
+    .then((user)) => res.json(User)
     .catch((err)) => res.status(500).json((err));
     }
-}, 
+
 getUserById(req,res) {
     User.findOne({_id: req.params.userId })
     .populate("thoughts")
