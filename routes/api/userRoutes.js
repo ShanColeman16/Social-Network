@@ -8,7 +8,7 @@ const {
     deleteUser,
     createReaction,
     deleteReaction
-}   = require('../../controller/userControllers');
+}   = require('../../controllers/userControllers');
 
 router.route('/').get(getAllUser).post(createUser);
 
